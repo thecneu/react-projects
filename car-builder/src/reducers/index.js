@@ -16,6 +16,7 @@ export const getFilterList = (cars) => {
  	return filters;
 }
 
+// selector for cars
 export const getCars = ({cars, filter}) => {
 	if (filter.filter === '') {
 		return cars;
@@ -23,25 +24,15 @@ export const getCars = ({cars, filter}) => {
 	return cars.filter(car => car[filter.filter] === filter.value)
 }
 
-// not sure how to use this since containers/CarList filters out the car list
-// necessary for redux
-export const filterCars = (state = [], action) => {
-	switch(action.type) {
-		default:
-			return state;
-	}
-}
-
-const initialFilter = {
-	filter: '',
-	value: ''
-}
-export const setFilter = (state = initialFilter, action) => {
+export const carBuilder = (state = {}, action) => {
 	switch(action.type) {
 		case 'SET_FILTER':
 			return {
-				filter: action.filter,
-				value: action.value
+				...state,
+				filter: {
+					filter: action.filter,
+					value: action.value	
+				}				
 			};
 		default:
 			return state;

@@ -1,20 +1,16 @@
 import './index.css';
 import React from 'react';
 import { render } from 'react-dom';
-import { combineReducers, createStore } from 'redux';
+import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import { getFilterList, filterCars, setFilter } from './reducers';
+import { getFilterList, carBuilder } from './reducers';
 import App from './components/App';
 import data from './data/db';
 
 const defaultState = {
-	cars: data
+	cars: data,
+	filter: { filter: '', value: '' }
 };
-
-const carBuilder = combineReducers({
-	filter: setFilter,
-	cars: filterCars
-})
 
 const store = createStore(
 	carBuilder, 
