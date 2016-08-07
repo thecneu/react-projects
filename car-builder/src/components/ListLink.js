@@ -3,7 +3,7 @@ import React from 'react';
 const ListLink = ({children, active, filterClick, filter}) => {
 	if (active) {
 		return (			
-			<span onClick={() => filterClick('', '')/* reset filter */}>
+			<span onClick={() => filterClick('')/* reset filter */}>
 				{children}
 			</span>
 		)

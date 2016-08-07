@@ -8,8 +8,12 @@ const mapStateToProps = (state, ownProps) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-	filterClick(filter, value) {
-		dispatch(setFilter(filter, value));
+	filterClick(filter, value = '') {
+		if (filter === '') {
+			dispatch({type: 'RESET_FILTER'})
+		} else {
+			dispatch(setFilter(filter, value));
+		}		
 	}
 });
 
