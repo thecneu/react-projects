@@ -1,39 +1,61 @@
 import React from 'react';
-import Exercise from './Exercise';
-import Cardio from './Cardio';
 
-const LogForm = ({addEntry}) => (
-  <form onSubmit={(e) => {
-    const form = e.currentTarget
-    const data = {
-      exerciseId: form.exerciseId.value,
-      weight: form.weight.value,
-      time: form.time.value,
-      distance: form.distance.value,
-      calories: form.calories.value
-    }
+class LogForm extends React.Component {
+  state = {
+    type: 'cardio'
+  }
 
-    addEntry(data)
-  }}>
+  renderExercise() {
+    return (
+      <div className="form-group">
+        {/* select name from list */}
+        <input type="text" name="name" placeholder="Name" />
+        <input type="text" name="weight" placeholder="Weight" />
+      </div>
+    )
+  }
 
-    {this.exercise ? <Exercise /> : <Cardio />}
+  renderCardio() {
+    return (
+      <div className="form-group">
+        <input type="text" name="time" placeholder="Time" />
+        <input type="text" name="distance" placeholder="Distance" />
+        <input type="text" name="calories" placeholder="Calories" />
+      </div>
+    )
+  }
 
-    <select name="type" onChange={(e) => {
-      const form = e.currentTarget
-      this.exercise = !/cardio/.test(form.value.toLowerCase())
-    }}>
-      <option value="">Select Exercise Type</option>
-      <option value="Cardio"></option>
-      <option value="Abs"></option>
-      <option value="Back"></option>
-      <option value="Biceps"></option>
-      <option value="Chest"></option>
-      <option value="Legs"></option>
-      <option value="Shoulders"></option>
-      <option value="Triceps"></option>
-    </select>
-    <button type="submit">Add Exercise</button>
-  </form>
-)
+  render() {
+    return (
+      <form onSubmit={(e) => {
+        const form = e.currentTarget
+        const data = {
+          exerciseId: form.exerciseId.value,
+          name: form.name.value,
+          weight: form.weight.value,
+          time: form.time.value,
+          distance: form.distance.value,
+          calories: form.calories.value
+        }
+
+        this.props.addEntry(data)
+      }}>
+        <select name="type" onChange={(e) => {
+          const form = e.currentTarget
+          this.setState({
+            type: form.value.toLowerCase()
+          })
+        }}>
+          <option value="cardio">Cardio</option>
+          <option value="exercise">Exercise</option>
+        </select>
+
+        {this.state.type === 'exercise' ? this.renderExercise() : this.renderCardio()}
+
+        <button type="submit">Add Exercise</button>
+      </form>
+    )
+  }
+}
 
 export default LogForm
