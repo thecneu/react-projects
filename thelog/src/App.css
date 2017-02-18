@@ -1,3 +1,7 @@
+.app {
+  padding: 0 30px;
+}
+
 input[type=text] {
   padding: 4px;
 }
@@ -9,6 +13,10 @@ button[type=submit] {
 
 span {
   padding: 10px;
+}
+
+header {
+  padding: 42px 0;
 }
 
 nav li {

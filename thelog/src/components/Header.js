@@ -1,11 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 const Header = () => (
     <header>
         <nav>
             <ul>
-                <li><a href="/">Add</a></li>
-                <li><a href="/list">List</a></li>
+                <li><Link to="/">Add</Link></li>
+                <li><Link to="/list">List</Link></li>
             </ul>
         </nav>
     </header>
