@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import LogForm from './components/form/LogForm';
+import React from 'react';
+import Header from './components/Header';
+import './App.css'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="app">
-        <LogForm />
-      </div>
-    );
-  }
-}
+const App = (props) => (
+    <main className="app">
+        <Header />
+        <div className="container">
+            {props.children}
+        </div>
+    </main>
+);
 
 export default App;
