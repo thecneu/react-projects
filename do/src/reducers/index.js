@@ -7,6 +7,7 @@ export const entries = (state = [], action) => {
                 ...state,
                 action.payload
             ]
+
         case UPDATE_ENTRY:
             return state.map(entry => {
                 if (entry.id === action.payload.id) {
@@ -17,9 +18,10 @@ export const entries = (state = [], action) => {
                 }
                 return entry
             })
+
         case DELETE_ENTRY:
             const index = state.findIndex(entry => entry.id === action.payload.id)
-            if (index >= 0) {
+            if (index !== -1) {
                 return [
                     ...state.slice(0, index),
                     ...state.slice(index + 1)
@@ -28,6 +30,7 @@ export const entries = (state = [], action) => {
                 console.error('Remove out of bounds')
                 return state
             }
+
         default:
             return state
     }
