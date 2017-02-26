@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.App-header {
+  background-color: #222;
+  height: 180px;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+nav {
+  text-align: center;
+}
+
+nav button {
+  padding: 8px;
+  font-size: 20px;
+  background: #222;
+  border: 0;
+}
+
+nav button a {
+  text-decoration: none;
+  color: #fff;
+}
+
+nav button a:hover {
+  color: #61DAFB;
+}
+
+nav button + button {
+  margin-left: 23px;
+}
+
+.container {
+  width: 960px;
+  margin: 108px auto;
+}
+
+.table-list th {
+  text-transform: capitalize;
+}
+
+.table-list td {
+  padding: 15px;
+  margin: 15px 23px;
+}
+
+.article a {
+  color: black;
+}
+
+.article:nth-of-type(odd) {
+  background: lightgrey;
+}
+
+.form-group {
+  margin: 15px 0;
+}
+
+input[type=text], textarea {
+  width: 100%;
+  padding: 8px 4px;
+  border: 1px solid #222;
+}
