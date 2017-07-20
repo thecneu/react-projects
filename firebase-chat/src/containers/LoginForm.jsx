@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import Input from './Input'
+import { connect } from 'react-redux'
+import { login } from '../data/actions'
+import Input from '../components/Input'
 
 class LoginForm extends Component {
   state = {
@@ -22,7 +24,7 @@ class LoginForm extends Component {
       avatar: this.state.avatar
     }
 
-    this.props.logIn(data)
+    this.props.login(data)
   }
 
   render() {
@@ -36,4 +38,4 @@ class LoginForm extends Component {
   }
 }
 
-export default LoginForm
+export default connect(null, { login })(LoginForm)

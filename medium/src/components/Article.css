@@ -1,0 +1,61 @@
+.page.hidden {
+  display: none;
+}
+
+.page.next .big-image {
+  cursor: pointer;
+}
+
+.page.next .big-image .inner {
+  opacity: 1;
+}
+
+.page.content-hidden .content {
+  display: none;
+}
+
+.page .content {
+  padding: 0 3em;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.page .content h3 {
+  color: #999;
+  font-family: 'Source Sans Pro', serif;
+  font-weight: 400;
+  margin-top: 3em;
+  padding-top: 0em;
+  padding-bottom: 0em;
+  margin-bottom: 0.375em;
+  font-size: 0.8em;
+  line-height: 1.5em;
+}
+
+.page .content h1 {
+  margin-top: 0em;
+  padding-top: 0em;
+  padding-bottom: 0em;
+  margin-bottom: 0.24em;
+  font-size: 2.5em;
+  line-height: 1.08em;
+}
+
+.page .content h2.description {
+  font-weight: normal;
+  font-style: italic;
+}
+
+.page .content p:last-child {
+  margin-bottom: 3em;
+}
+
+.page.fade-up-out {
+  opacity: 0;
+  transform: scale(0.8) translate3d(0, -10%, 0);
+  transition: all 450ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.page.easing-upward {
+  transition: all 450ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}

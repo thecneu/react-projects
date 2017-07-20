@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Header from './components/Header'
-import LoginForm from './components/LoginForm'
-import ChatUI from './components/ChatUI'
+import ChatUI from './containers/ChatUI'
+import LoginForm from './containers/LoginForm'
 
 class App extends Component {
   render() {
